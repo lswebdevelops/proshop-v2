@@ -147,8 +147,13 @@ const ProfileScreen = () => {
                   </td>
                   <td>
                     <Link to={`/order/${order._id}`}>
-                      <Button className="btn-sm" variant="light"
-                      >Details</Button>
+                      <Button
+                        className="btn-sm"
+                        variant="dark"
+                        style={{ color: "white" }}
+                      >
+                        Details
+                      </Button>
                     </Link>
                   </td>
                 </tr>
