@@ -134,7 +134,7 @@ const ProfileScreen = () => {
                     {order.isPaid ? (
                       order.paidAt.substring(0, 10)
                     ) : (
-                      <FaTimes style={{ color: "firebrick" }} />
+                      <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
 
@@ -142,7 +142,7 @@ const ProfileScreen = () => {
                     {order.isDelivered ? (
                       order.deliveredAt.substring(0, 10)
                     ) : (
-                      <FaTimes style={{ color: "firebrick" }} />
+                      <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
                   <td>
