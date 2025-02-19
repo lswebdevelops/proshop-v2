@@ -7,6 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import SearchBox from "./SearchBox";
+import { resetCart } from "../slices/cartSlice";
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -20,6 +21,7 @@ const Header = () => {
     try {
       await logoutApiCall().unwrap();
       dispatch(logout());
+      dispatch(resetCart());
       navigate("/login");
     } catch (err) {
       console.log(err);
@@ -39,8 +41,8 @@ const Header = () => {
             <Nav className="ms-auto">
               <SearchBox />
               <Nav.Link href="/cart">
-                <FaShoppingCart style={{fontSize: '1.2rem'}} />
-                
+                <FaShoppingCart style={{ fontSize: "1.2rem" }} />
+
                 {cartItems.length > 0 && (
                   <Badge pill bg="success" style={{ marginLeft: "5px" }}>
                     {cartItems.reduce((a, c) => a + c.qty, 0)}
@@ -76,7 +78,6 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               )}
-              
             </Nav>
           </Navbar.Collapse>
         </Container>
