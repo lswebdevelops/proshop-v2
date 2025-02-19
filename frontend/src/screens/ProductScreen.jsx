@@ -21,6 +21,7 @@ import Message from "../components/Message";
 import { addToCart } from "../slices/cartSlice";
 import { toast } from "react-toastify";
 
+
 const ProductScreen = () => {
   const { id: productId } = useParams();
   const dispatch = useDispatch();
@@ -76,6 +77,7 @@ const ProductScreen = () => {
         </Message>
       ) : (
         <>
+     
           <Row>
             <Col md={5}>
               <Image src={product.image} alt={product.name} fluid />
