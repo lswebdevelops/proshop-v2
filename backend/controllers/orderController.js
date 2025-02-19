@@ -23,7 +23,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
     //map over the order items and use the price from our items from database
     const dbOrderItems = orderItems.map((itemFromClient) => {
       const matchingItemFromDB = itemsFromDB.find(
-        (itemsFromDB) => itemFromDB._id.toString() === itemFromClient._id
+        (itemsFromDB) => itemsFromDB._id.toString() === itemFromClient._id
       );
       return {
         ...itemFromClient,
